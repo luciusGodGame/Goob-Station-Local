@@ -70,6 +70,8 @@ xenoarch-trigger-tip-throw = Кидок
 xenoarch-trigger-tip-death = Смерть
 xenoarch-trigger-tip-magnet = Магнітні хвилі
 
+### Підказки до опису
+
 xenoarch-trigger-examine-wrenching = Навколо обертається якась незакріплена деталь.
 xenoarch-trigger-examine-prying = З поверхні виступає панель.
 xenoarch-trigger-examine-screwing = Є піднята секція з невеликим заглибленням.

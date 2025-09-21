@@ -1,14 +1,14 @@
-gunnery-window-title = Gunnery Control
-gunnery-window-disconnected = DISCONNECTED
-gunnery-window-connected = CONNECTED
-gunnery-select-all = Select All
-gunnery-unselect-all = Unselect All
-gunnery-guns = Guns
+gunnery-window-title = Керування зброєю
+gunnery-window-disconnected = ВІДКЛЮЧЕНО
+gunnery-window-connected = ПІДКЛЮЧЕНО
+gunnery-select-all = Вибрати все
+gunnery-unselect-all = Зняти вибір з усього
+gunnery-guns = Зброя
 
-gunnery-server-examine-detail = The server is using [color={$valueColor}]{$usedProcessingPower}/{$processingPower}[/color] of its processing power.
+gunnery-server-examine-detail = Сервер використовує [color={$valueColor}]{$usedProcessingPower}/{$processingPower}[/color] своєї обчислювальної потужності.
 
-gunnery-select-ballistics = Ballistics
-gunnery-select-energy = Energy
-gunnery-select-missiles = Missiles
-gunnery-select-mining = Mining
-gunner-console-display-label = Display
+gunnery-select-ballistics = Балістика
+gunnery-select-energy = Енергія
+gunnery-select-missiles = Ракети
+gunnery-select-mining = Видобуток
+gunner-console-display-label = Дисплей

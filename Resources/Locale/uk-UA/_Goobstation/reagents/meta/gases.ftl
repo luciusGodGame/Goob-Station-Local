@@ -1,11 +1,11 @@
-reagent-name-bz = bz
-reagent-desc-bz = A potent hallucinogenic that also puts slimes into stasis.
+reagent-name-bz = бз
+reagent-desc-bz = Потужний галюциноген, який також вводить слаймів у стазис.
 
-reagent-name-healium = healium
-reagent-desc-healium = A powerful sleeping agent with regenerative properties.
+reagent-name-healium = геліум
+reagent-desc-healium = Потужний снодійний засіб з регенеративними властивостями.
 
-reagent-name-nitrium = nitrium
-reagent-desc-nitrium = An experimental performance enhancing gas. Nitrium can have amplified effects as more of it gets into your bloodstream.
+reagent-name-nitrium = нітріум
+reagent-desc-nitrium = Експериментальний газ, що підвищує продуктивність. Нітріум може мати посилений ефект, коли його більше потрапляє в кров.
 
-reagent-name-pluoxium = pluoxium
-reagent-desc-pluoxium = A gas that could supply even more oxygen to the bloodstream when inhaled, without being an oxidizer.
+reagent-name-pluoxium = плюоксіум
+reagent-desc-pluoxium = Газ, який при вдиханні може постачати ще більше кисню в кров, не будучи окислювачем.

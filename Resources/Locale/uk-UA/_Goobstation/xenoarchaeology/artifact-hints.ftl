@@ -1,4 +1,4 @@
-xenoarch-trigger-tip-bz = BZ
-xenoarch-trigger-tip-nitrium = Nitrium
-xenoarch-trigger-tip-healium = Healium
-xenoarch-trigger-tip-pluoxium = Pluoxium
+xenoarch-trigger-tip-bz = БЗ
+xenoarch-trigger-tip-nitrium = Нітріум
+xenoarch-trigger-tip-healium = Геліум
+xenoarch-trigger-tip-pluoxium = Плюоксіум
