@@ -244,7 +244,7 @@ accent-newyork-words-replace-81 = вали
 accent-newyork-words-82 = добре
 accent-newyork-words-replace-82 = норм
 
-accent-newyork-words-83 = ІПШ
+accent-newyork-words-83 = іПШ
 accent-newyork-words-replace-83 = залізяка
 
 accent-newyork-words-84 = дурень
