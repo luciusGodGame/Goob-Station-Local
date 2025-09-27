@@ -182,7 +182,7 @@
 - type: entity
   parent: BasePlushie
   id: PlushieVulpSusie # :3
-  name: "Смішна плюшева антроморфна лисичка"
+  name: "Смішна плюшева антропоморфна лисичка"
   description: "Та сама пульпа яка мала 4 подкаблучника... а може й більше..."
   components:
   - type: Sprite
