@@ -1498,13 +1498,8 @@ entities:
           - 118
           - 117
           - 486
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: Physics
       canCollide: False
-    - type: ActiveUserInterface
     - type: InsideEntityStorage
   - uid: 490
     components:
