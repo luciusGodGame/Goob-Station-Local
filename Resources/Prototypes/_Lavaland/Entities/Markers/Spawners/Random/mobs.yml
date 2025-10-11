@@ -25,7 +25,7 @@
 
 
 - type: entity
-  name: "спавнер мобів Лаваленду"
+  name: lavaland mob spawner
   id: SpawnerRandomMobLavaland
   parent: MarkerBase
   suffix: Lavaland
