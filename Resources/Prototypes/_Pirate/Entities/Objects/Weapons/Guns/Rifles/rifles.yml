@@ -11,6 +11,8 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Pirate/Objects/Weapons/Guns/Rifles/vulcan.rsi
   - type: Gun
     minAngle: 21
     maxAngle: 32
