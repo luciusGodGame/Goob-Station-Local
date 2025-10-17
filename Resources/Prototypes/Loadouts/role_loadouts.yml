@@ -461,6 +461,7 @@
   - ChiefEngineerNeck
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
+  - StationEngineerGloves # Pirate
   - CommandSelfDefense # Pirate
   - SurvivalExtended
   - Trinkets
@@ -477,6 +478,8 @@
   - GroupTankHarness
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
+  - StationEngineerGloves # Pirate
+  - TechnicalAssistantEquipment # Pirate
   - SurvivalExtended
   - Trinkets
   - Animals
@@ -495,7 +498,9 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
+  - StationEngineerGloves # Pirate
   - StationEngineerID
+  - StationEngineerEquipment # Pirate
   - SurvivalExtended
   - Trinkets
   - Animals
@@ -514,6 +519,8 @@
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
+  - AtmosphericTechnicianGloves # Pirate
+  - StationEngineerEquipment # Pirate
   - SurvivalExtended
   - Trinkets
   - Animals

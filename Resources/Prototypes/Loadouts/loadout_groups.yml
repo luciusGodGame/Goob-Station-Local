@@ -1118,6 +1118,56 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencySilicon
 
+# ENGINEERING - PIRATE START VVVV
+- type: loadoutGroup
+  id: StationEngineerGloves
+  name: loadout-group-station-engineer-gloves
+  minLimit: 0
+  loadouts:
+  - InsulatedGloves
+  - FingerlessInsulatedGloves
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianGloves
+  name: loadout-group-atmospheric-technician-gloves
+  minLimit: 0
+  loadouts:
+  - AtmosInsulatedGloves
+
+- type: loadoutGroup
+  id: TechnicalAssistantEquipment
+  name: loadout-group-technical-assistant-equipment
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - LoadoutEngineerBoxInflatable
+  - LoadoutEngineerMaterialWoodPlank10
+  - LoadoutEngineerSheetGlass10
+  - LoadoutEngineerSheetPlasteel10
+  - LoadoutEngineerSheetPlastic10
+  - LoadoutEngineerSheetSteel10
+
+- type: loadoutGroup
+  id: StationEngineerEquipment
+  name: loadout-group-station-engineer-equipment
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - LoadoutEngineerBoxInflatable
+  - LoadoutEngineerMedkitOxygenFilled
+  - LoadoutEngineerRCD
+  - LoadoutEngineerRCDAmmo
+  - LoadoutEngineerPowerDrill
+  - LoadoutEngineerWelderIndustrial
+  - LoadoutEngineerMaterialWoodPlank
+  - LoadoutEngineerSheetGlass
+  - LoadoutEngineerSheetPGlass
+  - LoadoutEngineerSheetUGlass
+  - LoadoutEngineerSheetPlasteel
+  - LoadoutEngineerSheetPlastic
+  - LoadoutEngineerSheetSteel
+# ENGINEERING - PIRATE END ^^^^
+
 # Science
 - type: loadoutGroup
   id: ResearchDirectorHead
