@@ -88,9 +88,6 @@
     cost: 2
     delay: 2
     fx: EffectRCDDeconstruct2
-  - type: InteractionVerbs #Pirate
-    allowedVerbs:
-    - KnockOn
 
 - type: entity
   parent: BaseFenceMetal

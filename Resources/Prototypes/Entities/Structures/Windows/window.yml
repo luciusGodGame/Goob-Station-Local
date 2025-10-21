@@ -141,9 +141,6 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
-  - type: InteractionVerbs #Pirate
-    allowedVerbs:
-    - KnockOn
 
 - type: entity
   parent: Window

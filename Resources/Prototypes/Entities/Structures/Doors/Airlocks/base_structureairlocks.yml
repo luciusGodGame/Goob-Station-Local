@@ -268,9 +268,6 @@
     - Airlocks
     - WirePanels
     - Networking
-  - type: InteractionVerbs # Pirate
-    allowedVerbs:
-    - KnockOn
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 75
     damagePenalty: 0.2
