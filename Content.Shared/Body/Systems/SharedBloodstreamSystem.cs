@@ -17,8 +17,8 @@ using Content.Shared.Drunk;
 using Content.Shared.Fluids;
 using Content.Shared.Forensics.Components;
 using Content.Shared.HealthExaminable;
-using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems; //Pirate
+using Content.Shared.Nutrition.Components; //Pirate
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
@@ -46,8 +46,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
     [Dependency] private readonly SharedStutteringSystem _stutteringSystem = default!;
-    [Dependency] private readonly HungerSystem _hunger = default!;
-    [Dependency] private readonly ThirstSystem _thirst = default!;
+    [Dependency] private readonly HungerSystem _hunger = default!; //Pirate
+    [Dependency] private readonly ThirstSystem _thirst = default!; //Pirate
 
     public override void Initialize()
     {

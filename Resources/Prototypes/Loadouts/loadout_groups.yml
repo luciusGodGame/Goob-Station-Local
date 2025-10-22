@@ -173,7 +173,7 @@
   - FlowerWreath
   - Hairflower
   - Headphones
-  - TrinketsClothingHeadPaperSack #Pirate 
+  - TrinketsClothingHeadPaperSack #Pirate
 # PIRATE PLUSHIES START VVVV
   - PlushieVulpSusie
   - PlushieEntony
@@ -1125,9 +1125,9 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
-  - MantisTinfoil
-  - MantisHelmet
-  - MantisFez
+  - MantisTinfoil # Pirate
+  - MantisHelmet # Pirate
+  - MantisFez # Pirate
 
 - type: loadoutGroup
   id: ResearchDirectorNeck

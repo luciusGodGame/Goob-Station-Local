@@ -36,7 +36,7 @@
       force: false
   #- type: BaseCultSpell PIRATE
   - type: SpeakOnAction
-    sentence: "простягає відкриту долоню вбік. З нізвідки в долоні з'являється чорний меч. Навколо меча лунають шепотливі демонічні голоси."
+    sentence: mantis-summon-black-sword
     isEmote: true
 
 - type: entity

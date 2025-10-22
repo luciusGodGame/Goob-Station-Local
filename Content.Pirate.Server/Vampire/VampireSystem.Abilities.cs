@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Bible;
+using Content.Goobstation.Common.Religion;
 using Content.Server.Body.Components;
 using Content.Shared.Flash;
 using Content.Shared.Flash.Components;
