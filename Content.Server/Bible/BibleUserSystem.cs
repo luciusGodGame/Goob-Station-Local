@@ -74,6 +74,7 @@ namespace Content.Server.Bible
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedEyeSystem _eye = default!;
 
+
         public override void Initialize()
         {
             base.Initialize();
@@ -85,7 +86,6 @@ namespace Content.Server.Bible
             SubscribeLocalEvent<SummonableComponent, SummonActionEvent>(OnSummon);
             SubscribeLocalEvent<FamiliarComponent, MobStateChangedEvent>(OnFamiliarDeath);
             SubscribeLocalEvent<FamiliarComponent, GhostRoleSpawnerUsedEvent>(OnSpawned);
-
         }
 
         private readonly Queue<EntityUid> _addQueue = new();
@@ -302,7 +302,7 @@ namespace Content.Server.Bible
         private void ViewFracture(Entity<BibleUserComponent> ent, ref ComponentInit args)
         {
             if (TryComp<EyeComponent>(ent, out var eye))
-            _eye.SetVisibilityMask(ent, eye.VisibilityMask | (int) VisibilityFlags.EldritchInfluenceSpent);
+                _eye.SetVisibilityMask(ent, eye.VisibilityMask | (int)VisibilityFlags.EldritchInfluenceSpent);
         }
     }
 }
