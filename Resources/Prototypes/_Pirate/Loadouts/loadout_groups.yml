@@ -60,14 +60,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -98,16 +90,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 - type: loadoutGroup
   id: PiratePassengerNeck
@@ -184,31 +173,32 @@
   id: PiratePassengerShoes
   name: loadout-group-passenger-shoes
   loadouts:
+  - BlackShoes
+  - WhiteShoes
+  - WardrobeShoesColorRed
+  - BrownShoes
+  - WardrobeShoesColorOrange
+  - WardrobeShoesColorYellow
+  - WardrobeShoesColorGreen
+  - BlueShoes
+  - WardrobeShoesColorPurple
   - WinterBoots
   - WardrobeBootsPerformer
   - WardrobeUnderSocksCoder
   - WardrobeClothwrap
   - WardrobeFlippers
+  - WardrobeSlippers
   - WardrobeSlippersDuck
   - WardrobeSlippersLizard
-  - WardrobeSlippers
   - WardrobeShoesTourist
   - WardrobeSandals
-  - WardrobeShoesColorPurple
-  - WardrobeShoesColorRed
-  - WardrobeShoesColorOrange
-  - WardrobeShoesColorGreen
-  - WardrobeShoesColorYellow
-  - WardrobeShoesColorBlue
-  - WardrobeShoesColorWhite
-  - WardrobeShoesColorBrown
-  - WardrobeShoesColorBlack
 
 - type: loadoutGroup
   id: PiratePassengerOuterClothing
   name: loadout-group-passenger-outerclothing
   minLimit: 0
   loadouts:
+  - WardrobeMNKBlackTopCoat
   - WardrobeCoatTrench
   - WardrobeCoatJensen
   - WardrobeCoatGentle
@@ -224,6 +214,8 @@
   - WardrobeWinterColorOrange
   - WardrobeWinterColorRed
   - WardrobeWinterCoat
+  - WardrobeMNKBlackJacket
+  - WardrobeMNKWhiteHoodie
   - WardrobeBomberPunkRed
   - WardrobeBomberPinkSleeves
   - WardrobeBomberAerostatic
@@ -311,14 +303,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -349,16 +333,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 - type: loadoutGroup
   id: PirateBartenderOuterClothing
@@ -367,6 +348,7 @@
   loadouts:
   - BartenderVest
   - BartenderApron
+  - WardrobeMNKBlackTopCoat
   - WardrobeCoatTrench
   - WardrobeCoatJensen
   - WardrobeCoatGentle
@@ -382,6 +364,8 @@
   - WardrobeWinterColorOrange
   - WardrobeWinterColorRed
   - WardrobeWinterCoat
+  - WardrobeMNKBlackJacket
+  - WardrobeMNKWhiteHoodie
   - WardrobeBomberPunkRed
   - WardrobeBomberPinkSleeves
   - WardrobeBomberAerostatic
@@ -467,14 +451,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -505,16 +481,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 - type: loadoutGroup
   id: PirateChefOuterClothing
@@ -523,6 +496,7 @@
   loadouts:
   - ChefApron
   - ChefJacket
+  - WardrobeMNKBlackTopCoat
   - WardrobeCoatTrench
   - WardrobeCoatJensen
   - WardrobeCoatGentle
@@ -538,6 +512,8 @@
   - WardrobeWinterColorOrange
   - WardrobeWinterColorRed
   - WardrobeWinterCoat
+  - WardrobeMNKBlackJacket
+  - WardrobeMNKWhiteHoodie
   - WardrobeBomberPunkRed
   - WardrobeBomberPinkSleeves
   - WardrobeBomberAerostatic
@@ -579,14 +555,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -617,16 +585,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 # Chaplain
 - type: loadoutGroup
@@ -705,14 +670,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -743,16 +700,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 - type: loadoutGroup
   id: PirateChaplainOuterClothing
@@ -763,6 +717,7 @@
   - ChaplainNunRobe
   - ChaplainBlackHoodie
   - ChaplainHoodie
+  - WardrobeMNKBlackTopCoat
   - WardrobeCoatTrench
   - WardrobeCoatJensen
   - WardrobeCoatGentle
@@ -778,6 +733,8 @@
   - WardrobeWinterColorOrange
   - WardrobeWinterColorRed
   - WardrobeWinterCoat
+  - WardrobeMNKBlackJacket
+  - WardrobeMNKWhiteHoodie
   - WardrobeBomberPunkRed
   - WardrobeBomberPinkSleeves
   - WardrobeBomberAerostatic
@@ -889,14 +846,6 @@
   - BrownMJ
   - MaroonMJ
   - WardrobeJumpsuitFlannel
-  - WardrobeJumpskirtCasualGreen
-  - WardrobeJumpsuitCasualGreen
-  - WardrobeJumpskirtCasualRed
-  - WardrobeJumpsuitCasualRed
-  - WardrobeJumpskirtCasualPurple
-  - WardrobeJumpsuitCasualPurple
-  - WardrobeJumpskirtCasualBlue
-  - WardrobeJumpsuitCasualBlue
   - WardrobeJumpsuitHawaiYellow
   - WardrobeJumpsuitHawaiBlue
   - WardrobeJumpsuitHawaiBlack
@@ -927,16 +876,13 @@
   - WardrobeJumpsuitColorWhite
   - WardrobeJumpskirtColorGrey
   - WardrobeJumpsuitColorGrey
-  - WardrobeJumpskirtGreenStripedDress
-  - WardrobeJumpskirtCyanStripedDress
-  - WardrobeJumpskirtPinkStripedDress
-  - WardrobeJumpskirtRedStripedDress
-  - WardrobeJumpskirtOrangeStripedDress
-  - WardrobeJumpskirtYellowTurtleneckDress
-  - WardrobeJumpskirtRedTurtleneckDress
-  - WardrobeJumpskirtPurpleTurtleneckDress
-  - WardrobeJumpskirtGreenTurtleneckDress
-  - WardrobeJumpskirtBlueTurtleneckDress
+  - WardrobeMNKBlackOveralls
+  - WardrobeMNKTracksuitBlack
+  - WardrobeMNKBlackShoulder
+  - WardrobeMNKDressBlack
+  - WardrobeMNKGymBra
+  - WardrobeMNKUnderGarment
+  - WardrobeMNKOfficeSkirt
 
 - type: loadoutGroup
   id: PirateBotanistOuterClothing
@@ -944,6 +890,7 @@
   minLimit: 0
   loadouts:
   - BotanistApron
+  - WardrobeMNKBlackTopCoat
   - WardrobeCoatTrench
   - WardrobeCoatJensen
   - WardrobeCoatGentle
@@ -959,6 +906,8 @@
   - WardrobeWinterColorOrange
   - WardrobeWinterColorRed
   - WardrobeWinterCoat
+  - WardrobeMNKBlackJacket
+  - WardrobeMNKWhiteHoodie
   - WardrobeBomberPunkRed
   - WardrobeBomberPinkSleeves
   - WardrobeBomberAerostatic
@@ -973,40 +922,8 @@
   - WardrobeFlannelGreen
   - WardrobeFlannelRed
 
-# Musicaian
-- type: loadoutGroup
-  id: PirateMusicianOuterClothing
-  name: loadout-group-musician-outerclothing
-  minLimit: 0
-  loadouts:
-  - WardrobeCoatTrench
-  - WardrobeCoatJensen
-  - WardrobeCoatGentle
-  - WardrobeWinterColorWhite
-  - WardrobeWinterColorGray
-  - WardrobeWinterColorBlack
-  - WardrobeWinterColorBrown
-  - WardrobeWinterColorLightBrown
-  - WardrobeWinterColorPurple
-  - WardrobeWinterColorBlue
-  - WardrobeWinterColorGreen
-  - WardrobeWinterColorYellow
-  - WardrobeWinterColorOrange
-  - WardrobeWinterColorRed
-  - WardrobeWinterCoat
-  - WardrobeBomberPunkRed
-  - WardrobeBomberPinkSleeves
-  - WardrobeBomberAerostatic
-  - WardrobeJacketLettermanMagenta
-  - WardrobeJacketLettermanRed
-  - WardrobeJacketLettermanBrown
-  - WardrobeJacketLettermanBlue
-  - WardrobeJacketJamrock
-  - WardrobeJacketBiker
-  - WardrobeJacketLeather
-  - WardrobeFlannelBlue
-  - WardrobeFlannelGreen
-  - WardrobeFlannelRed
+
+
 ## Cargo - Карго
 
 
