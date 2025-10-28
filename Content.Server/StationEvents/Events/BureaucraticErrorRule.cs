@@ -63,7 +63,7 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
         {
             var lower = (int) (jobList.Count * 0.30); // Pirate - was 0.20
             var upper = (int) (jobList.Count * 0.40); // Pirate - was 0.30
-            // Changing every role is maybe a bit too chaotic so instead change 20-30% of them.
+            // Changing every role is maybe a bit too chaotic so instead change 30-40% of them.
             var num = RobustRandom.Next(lower, upper);
             for (var i = 0; i < num; i++)
             {
