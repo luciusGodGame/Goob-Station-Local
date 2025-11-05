@@ -14,7 +14,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      role: Security
+      department: Security
       time: 36000 # 10 годин
 
 - type: loadoutEffectGroup
@@ -23,7 +23,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      role: Security
+      department: Security
       time: 108000 # 30 годин
 
 - type: loadoutEffectGroup
