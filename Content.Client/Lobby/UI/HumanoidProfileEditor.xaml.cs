@@ -868,15 +868,11 @@ namespace Content.Client.Lobby.UI
             _nationalies.Clear();
 
             _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    o,
-                    _entManager,
-                    _prototypeManager,
-                    _cfgManager, out _)));
+                .Where(o =>
+                {
+                    var prof = Profile ?? HumanoidCharacterProfile.DefaultWithSpecies();
+                    return CheckRequirementsValid(o.Requirements, prof);
+                }));
 
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
@@ -899,15 +895,11 @@ namespace Content.Client.Lobby.UI
             _employers.Clear();
 
             _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                .Where(o =>
+                {
+                    var prof = Profile ?? HumanoidCharacterProfile.DefaultWithSpecies();
+                    return CheckRequirementsValid(o.Requirements, prof);
+                }));
 
             var employerIds = _employers.Select(o => o.ID).ToList();
 
@@ -930,15 +922,11 @@ namespace Content.Client.Lobby.UI
             _lifepaths.Clear();
 
             _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                .Where(o =>
+                {
+                    var prof = Profile ?? HumanoidCharacterProfile.DefaultWithSpecies();
+                    return CheckRequirementsValid(o.Requirements, prof);
+                }));
 
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
@@ -955,6 +943,23 @@ namespace Content.Client.Lobby.UI
                 SetLifepath(SharedHumanoidAppearanceSystem.DefaultLifepath);
         }
         // Pirate edit end - port EE contractors
+
+        private bool CheckRequirementsValid(IReadOnlyCollection<JobRequirement>? requirements, HumanoidCharacterProfile profile)
+        {
+            if (requirements == null || requirements.Count == 0)
+                return true;
+
+            var session = _playerManager.LocalSession;
+            var playTimes = session != null ? _requirements.GetPlayTimes(session) : new Dictionary<string, TimeSpan>();
+
+            foreach (var requirement in requirements)
+            {
+                if (!requirement.Check(_entManager, _prototypeManager, profile, playTimes, out _))
+                    return false;
+            }
+
+            return true;
+        }
 
         public void RefreshAntags()
         {
@@ -1657,6 +1662,21 @@ namespace Content.Client.Lobby.UI
             ReloadClothes(); // Lifepaths may have specific gear, reload the clothes
         }
         // Pirate edit end - port EE contractors
+
+        private void UpdateCharacterRequired()
+        {
+            // Refresh requirement-gated UI after profile changes that may affect availability.
+            RefreshNationalities();
+            RefreshEmployers();
+            RefreshLifepaths();
+            RefreshJobs();
+        }
+
+        private void ReloadClothes()
+        {
+            // Minimal implementation: rebuild the preview entity respecting the ShowClothes toggle.
+            ReloadPreview();
+        }
 
         private void SetName(string newName)
         {
