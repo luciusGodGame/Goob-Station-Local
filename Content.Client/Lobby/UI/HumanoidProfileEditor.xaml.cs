@@ -874,19 +874,22 @@ namespace Content.Client.Lobby.UI
                     return CheckRequirementsValid(o.Requirements, prof);
                 }));
 
-            var nationalityIds = _nationalies.Select(o => o.ID).ToList();
+            // Ensure the currently saved nationality is present even if filtered out (avoid UI resetting to default).
+            if (Profile != null && !_nationalies.Any(n => n.ID == Profile.Nationality)
+                && _prototypeManager.TryIndex(Profile.Nationality, out NationalityPrototype? savedNat))
+            {
+                _nationalies.Insert(0, savedNat);
+            }
 
+            var selectedIndex = -1;
             for (var i = 0; i < _nationalies.Count; i++)
             {
                 NationalityButton.AddItem(Loc.GetString(_nationalies[i].NameKey), i);
-
-                if (Profile?.Nationality == _nationalies[i].ID)
-                    NationalityButton.SelectId(i);
+                if (selectedIndex < 0 && Profile?.Nationality == _nationalies[i].ID)
+                    selectedIndex = i;
             }
-
-            // If our nationality isn't available, reset it to default
-            if (Profile != null && !nationalityIds.Contains(Profile.Nationality))
-                SetNationality(SharedHumanoidAppearanceSystem.DefaultNationality);
+            if (selectedIndex >= 0)
+                NationalityButton.SelectId(selectedIndex);
         }
 
         public void RefreshEmployers()
@@ -901,19 +904,22 @@ namespace Content.Client.Lobby.UI
                     return CheckRequirementsValid(o.Requirements, prof);
                 }));
 
-            var employerIds = _employers.Select(o => o.ID).ToList();
+            // Preserve saved employer if filtered out.
+            if (Profile != null && !_employers.Any(e => e.ID == Profile.Employer)
+                && _prototypeManager.TryIndex(Profile.Employer, out EmployerPrototype? savedEmp))
+            {
+                _employers.Insert(0, savedEmp);
+            }
 
+            var selectedEmployer = -1;
             for (var i = 0; i < _employers.Count; i++)
             {
                 EmployerButton.AddItem(Loc.GetString(_employers[i].NameKey), i);
-
-                if (Profile?.Employer == _employers[i].ID)
-                    EmployerButton.SelectId(i);
+                if (selectedEmployer < 0 && Profile?.Employer == _employers[i].ID)
+                    selectedEmployer = i;
             }
-
-            // If our employer isn't available, reset it to default
-            if (Profile != null && !employerIds.Contains(Profile.Employer))
-                SetEmployer(SharedHumanoidAppearanceSystem.DefaultEmployer);
+            if (selectedEmployer >= 0)
+                EmployerButton.SelectId(selectedEmployer);
         }
 
         public void RefreshLifepaths()
@@ -928,19 +934,22 @@ namespace Content.Client.Lobby.UI
                     return CheckRequirementsValid(o.Requirements, prof);
                 }));
 
-            var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
+            // Preserve saved lifepath if filtered out.
+            if (Profile != null && !_lifepaths.Any(l => l.ID == Profile.Lifepath)
+                && _prototypeManager.TryIndex(Profile.Lifepath, out LifepathPrototype? savedLife))
+            {
+                _lifepaths.Insert(0, savedLife);
+            }
 
+            var selectedLifepath = -1;
             for (var i = 0; i < _lifepaths.Count; i++)
             {
                 LifepathButton.AddItem(Loc.GetString(_lifepaths[i].NameKey), i);
-
-                if (Profile?.Lifepath == _lifepaths[i].ID)
-                    LifepathButton.SelectId(i);
+                if (selectedLifepath < 0 && Profile?.Lifepath == _lifepaths[i].ID)
+                    selectedLifepath = i;
             }
-
-            // If our lifepath isn't available, reset it to default
-            if (Profile != null && !lifepathIds.Contains(Profile.Lifepath))
-                SetLifepath(SharedHumanoidAppearanceSystem.DefaultLifepath);
+            if (selectedLifepath >= 0)
+                LifepathButton.SelectId(selectedLifepath);
         }
         // Pirate edit end - port EE contractors
 
