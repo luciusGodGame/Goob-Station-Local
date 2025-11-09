@@ -126,3 +126,7 @@
 - type: lifepath
   id: Hitman
   nameKey: lifepath_name_hitman
+
+- type: lifepath
+  id: LaboratoryRat
+  nameKey: lifepath_name_laboratory_rat
