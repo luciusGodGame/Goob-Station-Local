@@ -273,35 +273,35 @@ namespace Content.Client.RoundEnd
                     && playerInfo.DamagePerGroup.Values.Any(v => v > 0))
                 {
                     var totalDamage = playerInfo.DamagePerGroup.Values.Sum(static v => (decimal) v);
-                    var severityAdj = totalDamage switch
+                    var severityKey = totalDamage switch
                     {
-                        >= 1000 => "catastrophic",
-                        >= 750 => "devastating",
-                        >= 500 => "agonizing",
-                        >= 300 => "painful",
-                        >= 200 => "brutal",
-                        _ => "tragic"
+                        >= 1000 => "round-end-summary-window-death-severity-catastrophic",
+                        >= 750 => "round-end-summary-window-death-severity-devastating",
+                        >= 500 => "round-end-summary-window-death-severity-agonizing",
+                        >= 300 => "round-end-summary-window-death-severity-painful",
+                        >= 200 => "round-end-summary-window-death-severity-brutal",
+                        _ => "round-end-summary-window-death-severity-tragic"
                     };
 
                     var highestDamage = playerInfo.DamagePerGroup
                         .OrderByDescending(kvp => kvp.Value)
                         .First();
-                    var typeAdj = highestDamage.Key switch
+                    var typeKey = highestDamage.Key switch
                     {
-                        "Burn" => "fiery",
-                        "Brute" => "crushing",
-                        "Toxin" => "poisonous",
-                        "Airloss" => "suffocating",
-                        "Genetic" => "twisted",
-                        "Metaphysical" => "otherworldly",
-                        "Electronic" => "shocking",
-                        _ => "mysterious",
+                        "Burn" => "round-end-summary-window-death-type-fiery",
+                        "Brute" => "round-end-summary-window-death-type-crushing",
+                        "Toxin" => "round-end-summary-window-death-type-poisonous",
+                        "Airloss" => "round-end-summary-window-death-type-suffocating",
+                        "Genetic" => "round-end-summary-window-death-type-twisted",
+                        "Metaphysical" => "round-end-summary-window-death-type-otherworldly",
+                        "Electronic" => "round-end-summary-window-death-type-shocking",
+                        _ => "round-end-summary-window-death-type-mysterious",
                     };
 
                     deathLabel.SetMarkup(
                         Loc.GetString("round-end-summary-window-death",
-                            ("severity", severityAdj),
-                            ("type", typeAdj)));
+                            ("severity", Loc.GetString(severityKey)),
+                            ("type", Loc.GetString(typeKey))));
 
                     var damageTable = new GridContainer
                     {
