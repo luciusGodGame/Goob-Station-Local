@@ -76,8 +76,12 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // Pirate start - port Floofstation custom layers
         //var height = Math.Clamp(humanoidAppearance.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
         //var width = Math.Clamp(humanoidAppearance.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
-        var height = humanoidAppearance.Height != 0 ? humanoidAppearance.Height : speciesPrototype.MinHeight;
-        var width = humanoidAppearance.Width != 0 ? humanoidAppearance.Width : speciesPrototype.MinWidth;
+        var height = humanoidAppearance.Height != 0 
+            ? Math.Clamp(humanoidAppearance.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight)
+            : speciesPrototype.MinHeight;
+        var width = humanoidAppearance.Width != 0 
+            ? Math.Clamp(humanoidAppearance.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth)
+            : speciesPrototype.MinWidth;
         // Pirate end - port Floofstation custom layers
         humanoidAppearance.Height = height;
         humanoidAppearance.Width = width;
