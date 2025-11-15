@@ -423,36 +423,12 @@ public sealed partial class MarkingPicker : Control
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
-            // Pirate start - port Floofstation custom layers
-            var skipDraw = false;
-            if (prototype.ColorLinks?.Count > 0)
-            {
-                var name = prototype.Sprites[i] switch
-                {
-                    SpriteSpecifier.Rsi rsi => rsi.RsiState,
-                    SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
-                    _ => null
-                };
-
-                if (name != null && prototype.ColorLinks.ContainsKey(name))
-                {
-                    skipDraw = true;
-                }
-            }
-            // Pirate end - port Floofstation custom layers
-            
             var colorContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
             };
 
-            // Pirate start - port Floofstation custom layers
-            // CMarkingColors.AddChild(colorContainer);
-            if (!skipDraw) 
-            {
-                CMarkingColors.AddChild(colorContainer);
-            }
-            // Pirate end - port Floofstation custom layers
+            CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
             colorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
