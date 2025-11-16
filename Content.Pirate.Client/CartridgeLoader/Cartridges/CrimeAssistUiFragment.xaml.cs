@@ -13,7 +13,7 @@ public sealed partial class CrimeAssistUiFragment : BoxContainer
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private CrimeAssistPage _currentPage;
+    private CrimeAssistPage? _currentPage;
     private List<CrimeAssistPage>? _pages;
 
     public CrimeAssistUiFragment()
@@ -30,23 +30,50 @@ public sealed partial class CrimeAssistUiFragment : BoxContainer
         _currentPage = FindPageById("mainmenu");
         UpdateUI(_currentPage);
 
-        StartButton.OnPressed += _ => UpdateUI(FindPageById(FindPageById("mainmenu").OnStart!));
+        StartButton.OnPressed += _ =>
+        {
+            var mainMenu = FindPageById("mainmenu");
+            if (mainMenu?.OnStart != null)
+            {
+                UpdateUI(FindPageById(mainMenu.OnStart));
+            }
+        };
         HomeButton.OnPressed += _ => UpdateUI(FindPageById("mainmenu"));
-        YesButton.OnPressed += _ => AdvanceState(_currentPage!, true);
-        NoButton.OnPressed += _ => AdvanceState(_currentPage!, false);
+        YesButton.OnPressed += _ => AdvanceState(_currentPage, true);
+        NoButton.OnPressed += _ => AdvanceState(_currentPage, false);
     }
 
-    public void AdvanceState(CrimeAssistPage currentPage, bool yesPressed)
+    public void AdvanceState(CrimeAssistPage? currentPage, bool yesPressed)
     {
-        UpdateUI(yesPressed ? FindPageById(currentPage.OnYes!) : FindPageById(currentPage.OnNo!));
+        if (currentPage == null)
+            return;
+
+        var nextPageId = yesPressed ? currentPage.OnYes : currentPage.OnNo;
+        UpdateUI(FindPageById(nextPageId));
     }
 
-    public void UpdateUI(CrimeAssistPage page)
+    public void UpdateUI(CrimeAssistPage? page)
     {
         _currentPage = page;
-        bool isResult = page.LocKeyPunishment != null;
+        
+        if (page == null)
 
+        {
+            StartButton.Visible = false;
+            YesButton.Visible = false;
+            NoButton.Visible = false;
+            HomeButton.Visible = true;
+            Explanation.Visible = false;
+            Subtitle.Visible = false;
+            Punishment.Visible = false;
+
+            Title.SetMarkup(Loc.GetString("crime-assist-error-page-not-found")); 
+            return;
+        }
+
+        bool isResult = page.LocKeyPunishment != null;
         StartButton.Visible = page.OnStart != null;
+
         YesButton.Visible = page.OnYes != null;
         NoButton.Visible = page.OnNo != null;
         HomeButton.Visible = page.OnStart == null;
@@ -74,10 +101,12 @@ public sealed partial class CrimeAssistUiFragment : BoxContainer
         {
             string color = page.LocKeySeverity! switch
             {
-                "crime-assist-crimetype-innocent" => "#39a300",
-                "crime-assist-crimetype-misdemeanour" => "#7b7b30",
-                "crime-assist-crimetype-felony" => "#7b5430",
-                "crime-assist-crimetype-capital" => "#7b2e30",
+                "crime-assist-severity-innocent" => "#39a300",
+                "crime-assist-severity-light" => "#cccc00",
+                "crime-assist-severity-medium" => "#ff9900",
+                "crime-assist-severity-heavy" => "#ff3300",
+                "crime-assist-severity-veryheavy" => "#cc0000",
+                "crime-assist-severity-critical" => "#8b0000",
                 _ => "#ff00ff"
             };
 
@@ -88,8 +117,11 @@ public sealed partial class CrimeAssistUiFragment : BoxContainer
         }
     }
 
-    private CrimeAssistPage FindPageById(string id)
+    private CrimeAssistPage? FindPageById(string? id)
     {
-        return _pages?.Find(o => o.ID == id)!;
+        if (string.IsNullOrEmpty(id))
+           return null;
+
+        return _pages?.Find(o => o.ID == id);
     }
 }

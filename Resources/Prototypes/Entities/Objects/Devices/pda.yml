@@ -348,7 +348,6 @@
     - WantedListCartridge
     - NanoChatCartridge # DeltaV
     - CrimeAssistCartridge # Pirate
-    - SecWatchCartridge # Pirate
 
 - type: entity
   parent: BasePDA
@@ -1540,7 +1539,6 @@
     - MedTekCartridge
     - NanoChatCartridge # DeltaV
     - CrimeAssistCartridge # Pirate
-    - SecWatchCartridge # Pirate
 
 - type: entity
   parent: ClownPDA
