@@ -28,6 +28,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Chemistry.Reaction;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Text;
 
@@ -185,6 +186,12 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
     private void OnVampireRemoved(Entity<VampireComponent> ent, ref ComponentShutdown args)
     {
         var uid = ent.Owner;
+
+        if (!TryComp<MetaDataComponent>(uid, out var meta) ||
+            meta.EntityLifeStage >= EntityLifeStage.Terminating)
+        {
+            return;
+        }
 
         // Clean up any vampire actions so they don't persist or duplicate on re-vamp.
         _vampire.CleanupVampireActions(uid, ent.Comp);
