@@ -13,12 +13,28 @@ namespace Content.Shared.VendingMachines
     {
         public readonly InventoryType Type;
         public readonly string ID;
-        public VendingMachineEjectMessage(InventoryType type, string id)
+        //Pirate banking start
+        public double PriceMultiplier;
+        public int Credits;
+        public VendingMachineEjectMessage(InventoryType type, string id, double priceMultiplier,
+            int credits)
+        //Pirate banking end
         {
             Type = type;
             ID = id;
+            //Pirate banking start
+            PriceMultiplier = priceMultiplier;
+            Credits = credits;
+            //Pirate banking end
         }
     }
+
+    //Pirate banking start
+    [Serializable, NetSerializable]
+    public sealed class VendingMachineWithdrawMessage : BoundUserInterfaceMessage
+    {
+    }
+    //Pirate banking end
 
     [Serializable, NetSerializable]
     public enum VendingMachineUiKey

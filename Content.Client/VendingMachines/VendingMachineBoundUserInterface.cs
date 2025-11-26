@@ -30,6 +30,7 @@ using Content.Shared.VendingMachines;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Content.Client.VendingMachines
 {
@@ -40,6 +41,9 @@ namespace Content.Client.VendingMachines
 
         [ViewVariables]
         private List<VendingMachineInventoryEntry> _cachedInventory = new();
+
+        [ViewVariables]
+        private List<int> _cachedFilteredIndex = new();
 
         public VendingMachineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
@@ -52,26 +56,39 @@ namespace Content.Client.VendingMachines
             _menu = this.CreateWindowCenteredLeft<VendingMachineMenu>();
             _menu.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
             _menu.OnItemSelected += OnItemSelected;
+            _menu.OnWithdraw += SendMessage;
+            
+            Refresh();
+        }
+
+        protected override void UpdateState(BoundUserInterfaceState state)
+        {
+            base.UpdateState(state);
+
+            var component = EntMan.GetComponent<VendingMachineComponent>(Owner);
+            _cachedInventory = component.Inventory
+                .Select(x => new VendingMachineInventoryEntry(
+                    InventoryType.Regular, 
+                    x.Key,                 
+                    x.Value.Amount,
+                    x.Value.Price
+                ))
+                .ToList();
+            
             Refresh();
         }
 
         public void Refresh()
         {
-            var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+            if (_menu == null)
+                return;
 
-            var system = EntMan.System<VendingMachineSystem>();
-            _cachedInventory = system.GetAllInventory(Owner);
+            var component = EntMan.GetComponent<VendingMachineComponent>(Owner);
+            var priceMultiplier = component.PriceMultiplier;
+            var credits = component.Credits;
+            var enabled = !component.Ejecting && !component.Broken;
 
-            _menu?.Populate(_cachedInventory, enabled);
-        }
-
-        public void UpdateAmounts()
-        {
-            var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
-
-            var system = EntMan.System<VendingMachineSystem>();
-            _cachedInventory = system.GetAllInventory(Owner);
-            _menu?.UpdateAmounts(_cachedInventory, enabled);
+            _menu.Populate(_cachedInventory, priceMultiplier, credits, enabled);
         }
 
         private void OnItemSelected(GUIBoundKeyEventArgs args, ListData data)
@@ -90,7 +107,11 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
+            var component = EntMan.GetComponent<VendingMachineComponent>(Owner);
+            var priceMultiplier = component.PriceMultiplier;
+            var credits = component.Credits;
+
+            SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID, priceMultiplier, credits));
         }
 
         protected override void Dispose(bool disposing)
@@ -103,6 +124,7 @@ namespace Content.Client.VendingMachines
                 return;
 
             _menu.OnItemSelected -= OnItemSelected;
+            _menu.OnWithdraw -= SendMessage;
             _menu.OnClose -= Close;
             _menu.Dispose();
         }

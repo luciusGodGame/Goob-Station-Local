@@ -87,7 +87,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Cargo.Components;
+using Content.Server._Pirate.Banking.Components; //Pirate banking
+using Content.Server._Pirate.Banking; //Pirate banking
 using Content.Server.DeviceLinking.Systems;
+using Content.Server.GameTicking; //Pirate banking
 using Content.Server.Popups;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Stack;
@@ -132,6 +135,9 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
 
+    [Dependency] private readonly GameTicker _ticker = default!; //Pirate banking
+    [Dependency] private readonly BankCardSystem _bankCard = default!; //Pirate banking
+
     private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
     private EntityQuery<MobStateComponent> _mobQuery;
@@ -155,7 +161,20 @@ public sealed partial class CargoSystem : SharedCargoSystem
         InitializeTelepad();
         InitializeBounty();
         InitializeFunds();
+
+        SubscribeLocalEvent<StationBankAccountComponent, ComponentInit>(OnInit); //Pirate banking
     }
+
+    //Pirate banking Start
+    private void OnInit(EntityUid uid, StationBankAccountComponent component, ComponentInit args)
+    {
+        var pirateAccount = EnsureComp<StationPirateBankingAccountComponent>(uid);
+
+        pirateAccount.BankAccount = _bankCard.CreateAccount(default, 2000);
+        pirateAccount.BankAccount.CommandBudgetAccount = true;
+        pirateAccount.BankAccount.Name = Loc.GetString("command-budget");
+    }
+    //Pirate banking end
 
     public override void Update(float frameTime)
     {

@@ -71,14 +71,7 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
 
         if (UISystem.TryGetOpenUi<VendingMachineBoundUserInterface>(uid, VendingMachineUiKey.Key, out var bui))
         {
-            if (fullUiUpdate)
-            {
-                bui.Refresh();
-            }
-            else
-            {
-                bui.UpdateAmounts();
-            }
+            bui.Refresh();
         }
     }
 
@@ -91,7 +84,7 @@ public sealed class VendingMachineSystem : SharedVendingMachineSystem
                 VendingMachineUiKey.Key,
                 out var bui))
         {
-            bui.UpdateAmounts();
+            bui.Refresh();
         }
     }
 
