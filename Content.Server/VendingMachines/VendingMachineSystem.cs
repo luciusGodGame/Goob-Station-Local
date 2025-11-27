@@ -97,6 +97,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Server.Access.Systems; // Pirate banking
+using Content.Server._Pirate.Banking; // Pirate banking
 
 namespace Content.Server.VendingMachines
 {
@@ -106,9 +108,14 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly StackSystem _stackSystem = default!; // Pirate banking
 
-        private const double GlobalPriceMultiplier = 2.0; // Pirate banking
+        // Pirate banking start
+        [Dependency] private readonly StackSystem _stackSystem = default!;
+        [Dependency] private readonly BankCardSystem _bankCard = default!;
+        [Dependency] private readonly IdCardSystem _idCard = default!;
+
+        private const double GlobalPriceMultiplier = 2.0;
+        // Pirate banking end
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -420,6 +427,9 @@ namespace Content.Server.VendingMachines
 
         public override void AuthorizedVend(EntityUid uid, EntityUid sender, InventoryType type, string itemId, VendingMachineComponent component)
         {
+            if (component.Ejecting)
+                return;
+
             if (!IsAuthorized(uid, sender, component))
                 return;
 
@@ -433,17 +443,35 @@ namespace Content.Server.VendingMachines
             var price = GetPrice(entry, component);
             if (price > 0)
             {
-                if (component.Credits < price)
+                if (component.Credits >= price)
+                {
+                    component.Credits -= price;
+                }
+                else if (TryPayWithBankCard(sender, price))
+                {
+                    Audio.PlayPvs(component.SoundInsertCurrency, uid);
+                }
+                else
                 {
                     Popup.PopupEntity(Loc.GetString("vending-machine-component-no-balance", ("target", uid)), sender, sender);
                     Deny((uid, component), sender);
                     return;
                 }
-                component.Credits -= price;
-                UpdateVendingMachineInterfaceState(uid, component);
             }
 
             base.AuthorizedVend(uid, sender, type, itemId, component);
+            UpdateVendingMachineInterfaceState(uid, component);
+        }
+
+        private bool TryPayWithBankCard(EntityUid user, int amount)
+        {
+            if (!_idCard.TryFindIdCard(user, out var idCard))
+                return false;
+
+            if (!TryComp<BankCardComponent>(idCard.Owner, out var bankCard) || bankCard.AccountId == null)
+                return false;
+
+            return _bankCard.TryChangeBalance(bankCard.AccountId.Value, -amount);
         }
 
 
