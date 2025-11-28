@@ -2,7 +2,6 @@
   parent: BaseItem
   id: BaseDepartmentBudgetCard
   categories: [ HideSpawnMenu ]
-  noSpawn: true
   components:
     - type: BankCard
       startingBalance: 5000
