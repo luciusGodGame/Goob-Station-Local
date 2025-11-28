@@ -440,6 +440,15 @@ namespace Content.Server.VendingMachines
                 return;
             }
 
+            // Pirate banking start
+            if (entry.Amount <= 0)
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), sender, sender);
+                Deny((uid, component), sender);
+                return;
+            }
+            // Pirate banking end
+
             var price = GetPrice(entry, component);
             if (price > 0)
             {
