@@ -608,7 +608,7 @@
     sprite: Objects/Consumable/Drinks/fourteen_loko.rsi
   # Pirate banking start
   - type: StaticPrice
-    price: 12
+    price: 15
   # Pirate banking end
 
 - type: entity

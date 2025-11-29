@@ -43,7 +43,7 @@
     solution: food
   - type: SpaceGarbage
   - type: StaticPrice
-    price: 0
+    price: 25 # Pirate
 
 # Packets
 
@@ -97,7 +97,7 @@
       - Packet
   # Pirate banking start
   - type: StaticPrice
-    price: 6
+    price: 10
   # Pirate banking end
 
 - type: entity

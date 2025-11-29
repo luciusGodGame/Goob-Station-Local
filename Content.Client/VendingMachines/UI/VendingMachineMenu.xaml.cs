@@ -309,7 +309,7 @@ namespace Content.Client.VendingMachines.UI
         private string GetItemText(EntityUid dummy, uint amount, int price) // Pirate banking
         {
             var itemName = Identity.Name(dummy, _entityManager);
-            return $"[{price}$] {itemName} [{amount}]"; // Pirate banking
+            return $"[{price}¥] {itemName} [{amount}]"; // Pirate banking
         }
 
         private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)

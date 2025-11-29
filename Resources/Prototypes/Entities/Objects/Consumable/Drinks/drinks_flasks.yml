@@ -100,7 +100,7 @@
     solution: drink
   # Pirate banking start
   - type: StaticPrice
-    price: 30
+    price: 45
   # Pirate banking end
 
 - type: entity

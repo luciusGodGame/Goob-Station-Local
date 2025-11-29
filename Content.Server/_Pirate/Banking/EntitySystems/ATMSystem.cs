@@ -67,7 +67,13 @@ public sealed class ATMSystem : SharedATMSystem
         var bankCard = Comp<BankCardComponent>(component.CardSlot.Item.Value);
         var amount = stack.Count;
 
-        _bankCardSystem.TryChangeBalance(bankCard.AccountId!.Value, amount);
+        if (!_bankCardSystem.TryChangeBalance(bankCard.AccountId!.Value, amount))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("atm-deposit-failed"), uid, args.User, PopupType.Medium);
+            _audioSystem.PlayPvs(component.SoundDeny, uid);
+            return;
+        }
+
         Del(args.Used);
 
         _audioSystem.PlayPvs(component.SoundInsertCurrency, uid);

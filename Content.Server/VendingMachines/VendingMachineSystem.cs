@@ -494,7 +494,9 @@ namespace Content.Server.VendingMachines
                 !currency.Price.Keys.Contains(component.CurrencyType))
                 return;
 
-            var stack = Comp<StackComponent>(args.Used);
+            if (!TryComp<StackComponent>(args.Used, out var stack))
+                return;
+
             component.Credits += stack.Count;
             Del(args.Used);
             UpdateVendingMachineInterfaceState(uid, component);
@@ -505,7 +507,7 @@ namespace Content.Server.VendingMachines
         protected override int GetEntryPrice(EntityPrototype proto)
         {
             var price = (int) _pricing.GetEstimatedPrice(proto);
-            return price > 0 ? price : 25;
+            return price; 
         }
 
         private int GetPrice(VendingMachineInventoryEntry entry, VendingMachineComponent comp)
@@ -521,6 +523,9 @@ namespace Content.Server.VendingMachines
         private void OnWithdrawMessage(EntityUid uid, VendingMachineComponent component, VendingMachineWithdrawMessage args)
         {
             if (component.Credits <= 0)
+                return;
+
+            if (!IsAuthorized(uid, args.Actor, component))
                 return;
                 
             _stackSystem.Spawn(component.Credits, PrototypeManager.Index(component.CreditStackPrototype),
