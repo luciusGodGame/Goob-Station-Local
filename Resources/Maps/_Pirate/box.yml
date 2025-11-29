@@ -161682,11 +161682,6 @@ entities:
       parent: 2
 - proto: TurnstileGenpopLeave
   entities:
-  - uid: 9432
-    components:
-    - type: Transform
-      pos: 2.5,25.5
-      parent: 2
   - uid: 9433
     components:
     - type: Transform
