@@ -2,7 +2,7 @@
   parent: ClothingBackpack
   id: ClothingBackpackInterdyne
   name: Рюкзак інтердайна
-  description: Рюкзак вміщуючи все необхідне.
+  description: Рюкзак здатний вмістити все необхідне.
   components:
   - type: Sprite
     sprite: _Pirate/Clothing/Back/Backpacks/interdyne.rsi
