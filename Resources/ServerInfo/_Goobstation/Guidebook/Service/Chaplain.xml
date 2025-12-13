@@ -1,9 +1,9 @@
 <Document>
-# Chaplain
-There's something about the vast infinity of space that turns men to prayer... Especially if they get thrown into it without a space suit.
+# Священник
+Є щось у безмежній нескінченності космосу, що звертає людей до молитви... Особливо якщо їх викидають у нього без скафандра.
 
 
-As a chaplain, you would ideally proselytize whatever crazy religion you've made up for that round over your headset. However, besides your office, the hellish crematorium next to your office, and the rarely used morgue, you have no access.
+Як священник, ви в ідеалі мали б проповідувати будь-яку божевільну релігію, яку ви вигадали для цього раунду, через свою гарнітуру. Однак, окрім вашого офісу, пекельного крематорію поруч з вашим офісом і рідко використовуваного моргу, у вас немає ніякого доступу.
 
   <Box>
     <GuideEntityEmbed Entity="Bible"/>
@@ -11,10 +11,10 @@ As a chaplain, you would ideally proselytize whatever crazy religion you've made
     <GuideEntityEmbed Entity="ArmamentsBeacon"/>
   </Box>
 
-## Religions:
-You are free to propagate any present day religions you know of, or even invent one of your own! Just make sure it doesn't go against NanoTrasen and its values, or you may well end up in the brig.
+## Релігії:
+Ви вільні поширювати будь-які сучасні релігії, які ви знаєте, або навіть вигадати свою власну! Просто переконайтеся, що вона не суперечить NanoTrasen та її цінностям, інакше ви можете опинитись в бригу.
 
-If you don't already have one, build an altar and find an offering to place on-top:
+Якщо у вас ще немає вівтаря, побудуйте його і знайдіть підношення для розміщення зверху:
 
   <Box>
     <GuideEntityEmbed Entity="AltarBananium"/>
@@ -34,50 +34,50 @@ If you don't already have one, build an altar and find an offering to place on-t
     <GuideEntityEmbed Entity="AltarToolbox"/>
   </Box>
 
-These altars can be constructed by placing the following offerings atop your base convert altar:
+Ці вівтарі можна побудувати, розмістивши наступні підношення на вашому базовому вівтарі для перетворення:
 
-- Bananium Altar: 1 x Bananium
-- Chaos Altar: 1 x Plasma
-- Druid Altar: 1 x Wooden Plank
-- Fanged Altar: 1 x Raw Meat
-- Heaven Altar: 1 x Templar Helmet
-- Maints Altar: 1 x Budget Insulated Gloves
-- Nanotrasen Altar: 1 x Plasteel
-- Space-Christian Altar: 1 x Nun Hood
-- Technology Altar: 1 x Capacitor
-- Toolbox Altar: 1 x Toolbox
-- Clockwork Altar: 1 x Small Power Cell
+- Бананієвий вівтар: 1 x Бананій
+- Вівтар хаосу: 1 x Плазма
+- Друїдський вівтар: 1 x Дерев'яна дошка
+- Вівтар ікол: 1 x Сире м'ясо
+- Небесний вівтар: 1 x Шолом тамплієра
+- Вівтар технічного обслуговування: 1 x Бюджетні ізольовані рукавички
+- Вівтар Nanotrasen: 1 x Пластсталь
+- Космо-християнський вівтар: 1 x Капелюх черниці
+- Технологічний вівтар: 1 x Конденсатор
+- Вівтар інструментів: 1 x Ящик для інструментів
+- Годинниковий вівтар: 1 x Мала батарея
 
-## Holy Artefacts
+## Священні артефакти
 
-### Armaments Beacon
-Allows you to choose a set of armor. All armors have identical stats.
+### Маяк озброєння
+Дозволяє вам вибрати набір броні. Усі броні мають однакові характеристики.
 
-### Null Rod
-The obsidian rod will be your defense against the forces of evil. [color=blue][bold] Having it in your hands will make you completely immune to the effects of magic. [/bold][/color]
+### Нуль-жезл
+Обсидіановий жезл буде вашим захистом від сил зла. [color=blue][bold] Тримаючи його в руках, ви будете повністю несприйнятливі до ефектів магії. [/bold][/color]
 
-You can transform it into a holy weapon of choice by placing it on an altar!
+Ви можете перетворити його на священну зброю за вибором, помістивши його на вівтар!
 
-### Spirit Candles
-You can craft a spirit candle by putting a candle on a skull. Spirit Candles are useful against evil spirits like Wraith.
+### Духовні свічки
+Ви можете створити духовну свічку, поклавши свічку на череп. Духовні свічки корисні проти злих духів, таких як Привиди.
 
-When they are ignited, they create a 12x12 tile area that reveals evil spirits. It also has a special function when you use it in-hand.
-By using it [bold]when an evil spirit is within(!!) your 12x12 area[/bold], it will make them corporeal.
+Коли вони запалені, вони створюють зону 12x12 плиток, що виявляє злих духів. Вона також має спеціальну функцію при використанні в руці.
+Використовуючи її [bold]коли злий дух знаходиться ВСЕРЕДИНІ(!!) вашої зони 12x12[/bold], вона зробить його тілесним.
 
-It has 2 charges per spirit candle, and [bold]it only consumes a charge when you reveal the evil spirit[/bold].
+Вона має 2 заряди на духовну свічку, і [bold]вона витрачає заряд лише коли ви виявляєте злого духа[/bold].
 
-It drops the skull once the candle has melted, so you can craft another one.
+Череп випадає, коли свічка розплавляється, тому ви можете створити іншу.
 
-## Duties
+## Обов'язки
 
-- Church Services: Give sermons and sing hymns.
-- Proselytizing: Most crew members are godless heathens, show them god's love.
-- Burial Services: Security or Medical may require someone, or something... to be cremated, familiarise yourself with your Chapel so you can make things quick!
-- [bold] Metaphysical Investigation: Most crew aren't aware of the threats posed by the unholy, be on the look out for anything suspicious. [/bold]
+- Церковні служби: проводьте проповіді та співайте гімни.
+- Прозелітизм: більшість членів екіпажу — безбожні язичники, покажіть їм божу любов.
+- Похоронні послуги: служба безпеки або медицина можуть вимагати когось, або щось... кремувати, ознайомтеся зі своєю каплицею, щоб зробити все швидко!
+- [bold] Метафізичне розслідування: більшість екіпажу не усвідомлює загроз, які несуть нечестиві, будьте напоготові щодо всього підозрілого. [/bold]
 
-### Metaphysical Threats
-As Chaplain you are the first line of defence against metaphysical threats, [bold] ready your Null Rod - the time is now. [/bold]
+### Метафізичні загрози
+Як священник, ви є першою лінією оборони проти метафізичних загроз, [bold] приготуйте свій нуль-жезл — час настав. [/bold]
 
-[color=red][bold] Use of excessive force against targets which you cannot confirm are metaphysical threats may land you in trouble with the law, use caution and investigate carefully. [/bold][/color]
+[color=red][bold] Використання надмірної сили проти цілей, яких ви не можете підтвердити як метафізичні загрози, може призвести до проблем із законом, будьте обережні та ретельно досліджуйте. [/bold][/color]
 
 </Document>
