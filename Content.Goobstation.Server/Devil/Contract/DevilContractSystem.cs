@@ -574,7 +574,7 @@ public sealed partial class DevilContractSystem : EntitySystem
         _ukrainianClauseToIdMap["ноги"] = "legs";
         _ukrainianClauseToIdMap["зір"] = "sight";
         _ukrainianClauseToIdMap["волядоборотьби"] = "willtofight";
-        _ukrainianClauseToIdMap["людство"] = "humanity";
+        _ukrainianClauseToIdMap["людяність"] = "humanity";
         _ukrainianClauseToIdMap["час"] = "time";
     }
     // Pirate ^
