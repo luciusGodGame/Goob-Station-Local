@@ -59,6 +59,10 @@ entities:
     - type: Transform
       pos: -4.9102783,6.0086007
       parent: 1
+    - type: FTLDestination
+      whitelist:
+        tags:
+        - Syndicate
     - type: MapGrid
       chunks:
         0,0:
@@ -1161,6 +1165,9 @@ entities:
     - type: Transform
       pos: 2.0390418,-2.1666667
       parent: 1
+    - type: Tag
+      tags:
+      - Syndicate
     - type: MapGrid
       chunks:
         0,0:
