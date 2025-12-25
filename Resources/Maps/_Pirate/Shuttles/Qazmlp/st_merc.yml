@@ -1941,8 +1941,6 @@ entities:
       pos: -10.5,4.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1141
   - uid: 1139
@@ -1951,8 +1949,6 @@ entities:
       pos: -17.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1148
 - proto: AmmoTechFab
@@ -5350,8 +5346,6 @@ entities:
       pos: -9.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1141
     - type: AtmosPipeColor
@@ -5362,8 +5356,6 @@ entities:
       pos: -14.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1148
     - type: AtmosPipeColor
@@ -5452,8 +5444,6 @@ entities:
       pos: -8.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1141
     - type: AtmosPipeColor
@@ -5465,8 +5455,6 @@ entities:
       pos: -15.5,1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1148
     - type: AtmosPipeColor
