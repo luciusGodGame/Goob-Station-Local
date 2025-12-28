@@ -7,11 +7,10 @@
 
 # they need to be able to espace when spawning inside a locked room
 # TODO: remove this once we got a better spawning loacation selection
-# Pirate disable
-#- type: startingGear
-#  id: ParadoxCloneGear
-#  inhand:
-#  - ToolboxMechanicalFilledAllTools
-#  storage:
-#    back:
-#    - ClothingHandsGlovesColorYellow
+- type: startingGear
+  id: ParadoxCloneGear
+  inhand:
+  - ToolboxMechanicalFilledAllTools
+  storage:
+    back:
+    - ClothingHandsGlovesColorYellow
