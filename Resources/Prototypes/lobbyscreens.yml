@@ -274,7 +274,7 @@
   name: Cyberpsychosis
   artist: Redmon
 
-  - type: lobbyBackground
+- type: lobbyBackground
   id: engiborgrecharge
   background: /Textures/LobbyScreens/engiborgrecharge.jpg
   name: Engi borg
