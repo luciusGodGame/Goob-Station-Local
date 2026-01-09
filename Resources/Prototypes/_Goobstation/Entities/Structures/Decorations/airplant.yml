@@ -1,7 +1,7 @@
 - type: entity
-  name: oxygen plant
+  name: "киснева рослина"
   parent: GasMinerBase
-  description: It seems to always be producing a gust of fresh air. The ground around it feels hot to the touch.
+  description: "Здається, вона постійно виробляє потік свіжого повітря. Земля навколо неї гаряча на дотик."
   id: AirPlantSmall
   suffix: Shuttle, 100kPa
   placement:
@@ -15,7 +15,7 @@
       maxExternalPressure: 100
 
 - type: entity
-  name: oxygen plant
+  name: "киснева рослина"
   parent: GasMinerBase
   id: AirPlantMedium
   suffix: Medium, 300kPa
@@ -30,7 +30,7 @@
       maxExternalPressure: 300
 
 - type: entity
-  name: oxygen plant
+  name: "киснева рослина"
   parent: GasMinerBase
   id: AirPlantLarge
   suffix: Large, 500kPa
