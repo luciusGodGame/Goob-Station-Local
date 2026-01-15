@@ -47,8 +47,7 @@ public sealed class GameMapManager : IGameMapManager
     {
         if (_configurationManager.GetCVar(CCVars.PirateMapRotationDontRepeatCount) > 0)
         {
-            PirateMapRotationUnavailablePool.TryAdd(map, 0);
-            return true;
+            return PirateMapRotationUnavailablePool.TryAdd(map, 0);
         }
 
         return false;
@@ -56,7 +55,10 @@ public sealed class GameMapManager : IGameMapManager
     void IGameMapManager.ProcessPirateMapRotationUnavailablePool()
     {
         if (_configurationManager.GetCVar(CCVars.PirateMapRotationDontRepeatCount) == 0)
+        {
             PirateMapRotationUnavailablePool.Clear();
+            return;
+        }
 
         _log.Debug($"Processing pirate map rotation pool:");
         foreach (var (map, roundsInPool) in PirateMapRotationUnavailablePool.ToDictionary())
