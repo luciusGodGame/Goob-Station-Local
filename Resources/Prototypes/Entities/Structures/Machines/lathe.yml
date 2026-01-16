@@ -440,6 +440,8 @@
     - GrenadeTriggersStatic
     - TapeRecorderStatic
     - MiscSignallersStatic
+    dynamicPacks: # Pirate - tweak fab recepies | Add advanced power cells to each fab
+    - PowerCells  # Pirate - tweak fab recepies | Add advanced power cells to each fab
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityWeaponsStatic
@@ -449,7 +451,6 @@
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
     - ScienceExplosives
-    - PowerCells # Pirate - tweak fab recepies | Add advanced power cells to each fab
   - type: BlueprintReceiver
     whitelist:
       tags:
