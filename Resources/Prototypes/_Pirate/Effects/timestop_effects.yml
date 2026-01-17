@@ -54,6 +54,7 @@
   components:
   - type: TimedDespawn
     lifetime: 15
+  - type: GravPulseOnMapInit
     maxRange: 5.0  # Дуже великий радіус
     baseRadialAcceleration: 0.01
   - type: Fixtures
