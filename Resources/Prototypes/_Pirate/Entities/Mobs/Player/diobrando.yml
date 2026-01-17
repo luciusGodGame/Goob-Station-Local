@@ -84,7 +84,7 @@
     belt: ClothingBeltChampion
     gloves: ClothingHandsGlovesCombat
     back: ClothingBackpackSatchelDrone
-    shoes: ClothingShoesBootsCombatDio
+    shoes: ClothingShoesBootsJackAdvancedDio
     pocket1: SleepingCarpScroll
     pocket2: HoloparasiteInjectorDio
   storage:
