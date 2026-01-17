@@ -1,21 +1,4 @@
 - type: entity
-  name: "Спавнер Діо Брандо"
-  id: SpawnMobHumanDioBrando
-  parent: MarkerBase
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-    - sprite: Mobs/Species/Human/parts.rsi
-      state: full
-    - sprite: _NF/Clothing/Uniforms/Jumpsuit/military.rsi
-      state: equipped-base-bottom
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanDioBrando
-  - type: GhostRole
-    name: "Діо Брандо"
-
-- type: entity
   id: MobHumanDioBrando
   name: "Діо Брандо"
   suffix: Дарт, Івентове
@@ -101,7 +84,7 @@
     belt: ClothingBeltChampion
     gloves: ClothingHandsGlovesCombat
     back: ClothingBackpackSatchelDrone
-    shoes: ClothingShoesBootsCombat
+    shoes: ClothingShoesBootsCombatDio
     pocket1: SleepingCarpScroll
     pocket2: HoloparasiteInjectorDio
   storage:
@@ -161,13 +144,13 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/_Pirate/Magic/za-warudo.ogg
     icon:
-      sprite: _Goobstation/Wizard/actions.rsi # Todo - Change this, but idc.
+      sprite: _Goobstation/Wizard/actions.rsi
       state: time
   - type: InstantAction
     event: !type:StopTimeEvent
       Proto: ChronofieldDio
   - type: SpeakOnAction
-    sentence: "ЗА ВАРУДО!!"
+    sentence: action-stop-time-dio-brando-sentence
   - type: Magic
     requiresClothes: false
     requiresSpeech: true
