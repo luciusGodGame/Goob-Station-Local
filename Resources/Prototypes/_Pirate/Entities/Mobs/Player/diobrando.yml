@@ -148,7 +148,7 @@
       state: time
   - type: InstantAction
     event: !type:StopTimeEvent
-      Proto: ChronofieldDio
+      proto: ChronofieldDio
   - type: SpeakOnAction
     sentence: action-stop-time-dio-brando-sentence
   - type: Magic
@@ -218,7 +218,7 @@
       state: time
   - type: InstantAction
     event: !type:StopTimeEvent
-      Proto: ChronofieldDio
+      proto: ChronofieldDio
   - type: Magic
     requiresClothes: false
     requiresSpeech: true
