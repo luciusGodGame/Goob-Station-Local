@@ -40,7 +40,7 @@
     - type: Insulated
 
 - type: entity
-  parent: [ClothingModsuitHelmetStandard, SolAllianceInfo, ShowSecurityIcons]
+  parent: [ClothingModsuitHelmetStandard, SolAllianceInfo, ShowSecurityIcons, BaseClothingRadio]
   id: ClothingModsuitHelmetSANMarine
   name: шолом мод-костюма CSA-85x "Мазу"
   description: Сучасний шолом для модного костюма "Mazu". Він має вбудований проекційний дисплей.

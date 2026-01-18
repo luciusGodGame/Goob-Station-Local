@@ -1,6 +1,6 @@
 # Helmets
 - type: entity
-  parent: [ClothingHeadHelmetBasic, SolAllianceInfo]
+  parent: [ClothingHeadHelmetBasic, SolAllianceInfo, BaseClothingRadio]
   id: ClothingHeadHelmetSAN
   name: SAN tactical helmet
   suffix: SAN
