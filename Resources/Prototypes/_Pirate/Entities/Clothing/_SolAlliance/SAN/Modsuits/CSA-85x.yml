@@ -43,7 +43,7 @@
   parent: [ClothingModsuitHelmetStandard, SolAllianceInfo, ShowSecurityIcons, BaseClothingRadio]
   id: ClothingModsuitHelmetSANMarine
   name: шолом мод-костюма CSA-85x "Мазу"
-  description: Сучасний шолом для модного костюма "Mazu". Він має вбудований проекційний дисплей.
+  description: Сучасний шолом для мод-костюма "Мазу". Він має вбудований проекційний дисплей.
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -66,7 +66,7 @@
   parent: [ClothingModsuitChestplateStandard, SolAllianceInfo]
   id: ClothingModsuitChestplateSANMarine
   name: нагрудник мод-костюма CSA-85x "Мазу"
-  description: Сучасний нагрудник для модного костюма "Мазу".
+  description: Сучасний нагрудник для мод-костюма "Мазу".
   categories: [HideSpawnMenu]
   components:
     - type: Sprite
@@ -100,7 +100,7 @@
   parent: [ClothingModsuitBootsStandard, SolAllianceInfo]
   id: ClothingModsuitBootsSANMarine
   name: чоботи мод-костюма CSA-85x "Мазу"
-  description: Сучасна пара чоботів для модного костюма "Мазу".
+  description: Сучасна пара чоботів для мод-костюма "Мазу".
   categories: [HideSpawnMenu]
   components:
     - type: Appearance

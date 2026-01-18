@@ -4,13 +4,14 @@
   suffix: Sol Alliance Navy
   description: A turret designed to provide protection for Sol Marines during combat drops. It menaces targets with a twin-linked C-20r, although its cheap fire controller lends to poor accuracy.
   components:
+    - type: SolutionContainerManager
     - type: NpcFactionMember
       factions:
         - SAN
     - type: Gun
-      fireRate: 10  # Guaranteed to spook the shit out of people.
+      fireRate: 10
       minAngle: 40
-      maxAngle: 45  # Not guaranteed to do a whole lot of damage unless they stand there and let it hit them.
+      maxAngle: 45
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
     - type: BallisticAmmoProvider
@@ -27,7 +28,6 @@
         - trigger:
             !type:DamageTrigger
             damage: 100
-          # TODO: Construction graph
           behaviors:
             - !type:DoActsBehavior
               acts: ["Destruction"]
