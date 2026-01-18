@@ -4,6 +4,9 @@
   suffix: Sol Alliance Navy
   description: A turret designed to provide protection for Sol Marines during combat drops. It menaces targets with a twin-linked C-20r, although its cheap fire controller lends to poor accuracy.
   components:
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: SolutionContainerManager
     - type: NpcFactionMember
       factions:
