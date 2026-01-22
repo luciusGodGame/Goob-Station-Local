@@ -230,7 +230,7 @@
   ghostDescription: "пік! пік-пік!"
 
 - type: customGhost
-  id: Redstern-ghost
+  id: Redsten-ghost
   ckey: NEO404
   sprite:
     # Вибач боже, за те, що я зроблю далі...
@@ -282,5 +282,5 @@
     - Mobs/Animals/spacespider.rsi
     - Mobs/Animals/spider.rsi
   alpha: 1
-  ghostName: "Редстерн"
+  ghostName: "Редстен"
   ghostDescription: "Найбільший боржник і ручна тваринка декора."
