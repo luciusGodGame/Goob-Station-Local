@@ -136,7 +136,7 @@
 - type: entity
   name: M470-L
   parent: [BaseWeaponSubMachineGun, BaseSecurityContraband, SolAllianceInfo]
-  id: WeaponSubMachineGunSolSMG
+  id: WeaponSubMachineGunSol
   suffix: SAN
   description: Розроблена Zavodskoi Interstellar як зменшена версія їхньої M469, M470-L — це зброя особистого захисту, призначена для використання військовослужбовцями другої ланки всіх родів військ Соляріанської армії, такими як війська підтримки та члени екіпажу ВМС. Використовує магазини .35 калібру.
   components:
