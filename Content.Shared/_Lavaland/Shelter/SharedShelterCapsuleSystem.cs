@@ -27,6 +27,7 @@ using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.StepTrigger.Prototypes;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -38,6 +39,7 @@ public abstract class SharedShelterCapsuleSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
@@ -86,20 +88,23 @@ public abstract class SharedShelterCapsuleSystem : EntitySystem
         // Make sure that surrounding area does not have any entities with physics
         var box = Box2.CenteredAround(worldPos.Position.Rounded(), comp.BoxSize);
 
-        // Doesn't work near other grids
-        if (_lookup.GetEntitiesInRange<MapGridComponent>(xform.Coordinates, comp.BoxSize.Length()).Any())
+        #region DOWNSTREAM-TPirates: bluespace shelter capsules fix
+        // Doesn't work near other grids (5×5 / 7×7 deploy box)
+        var nearbyGrids = new List<Entity<MapGridComponent>>();
+        _mapManager.FindGridsIntersecting(worldPos.MapId, box, ref nearbyGrids, includeMap: false);
+        nearbyGrids.RemoveAll(e => e.Owner == xform.GridUid.Value);
+        if (nearbyGrids.Count > 0)
         {
             _popup.PopupCoordinates(Loc.GetString("shelter-capsule-fail-near-grid"), xform.Coordinates);
             return false;
         }
 
-        #region DOWNSTREAM-TPirates: bluespace shelter capsules fix
         if (GetBlockingEntities(xform.GridUid.Value, box).Any())
-        #endregion
         {
             _popup.PopupCoordinates(Loc.GetString("shelter-capsule-fail-no-space"), xform.Coordinates);
             return false;
         }
+        #endregion
 
         return true;
     }
