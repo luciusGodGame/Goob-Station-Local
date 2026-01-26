@@ -120,20 +120,21 @@ public abstract class SharedShelterCapsuleSystem : EntitySystem
                 (phys.CollisionLayer & (int) CollisionGroup.Impassable) != 0)
             {
                 yield return uid;
-                continue;
             }
-            if (IsHazardousStepTrigger(uid))
+            else if (IsHazardousStepTrigger(uid))
+            {
                 yield return uid;
+            }
         }
     }
 
     private bool IsHazardousStepTrigger(EntityUid uid)
     {
+        ProtoId<StepTriggerTypePrototype>[] hazardousStepTriggerTypeIds = [new("Lava"), new("Chasm")];
         if (!TryComp<StepTriggerComponent>(uid, out var step) || step.TriggerGroups?.Types == null)
             return false;
         var types = step.TriggerGroups.Types;
-        return types.Contains(new ProtoId<StepTriggerTypePrototype>("Lava"))
-            || types.Contains(new ProtoId<StepTriggerTypePrototype>("Chasm"));
+        return hazardousStepTriggerTypeIds.Any(t => types.Contains(t));
     }
     #endregion
 }
